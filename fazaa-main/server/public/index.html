@@ -1,194 +1,483 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" id="htmlRoot">
+<html lang="ar" dir="rtl">
 <head>
-<!-- Snap Pixel Code -->
-<script type='text/javascript'>
-(function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function()
-{a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)};
-a.queue=[];var s='script';r=t.createElement(s);r.async=!0;
-r.src=n;var u=t.getElementsByTagName(s)[0];
-u.parentNode.insertBefore(r,u);})(window,document,
-'https://sc-static.net/scevent.min.js');
-
-snaptr('init', '47f912ed-9791-4694-8586-f27aed53b2ea', {});
-
-snaptr('track', 'PAGE_VIEW');
-
-</script>
-<!-- End Snap Pixel Code -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="pageTitle">faza - فزعة</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <title>مصرف جيهان للاستثمار والتمويل الإسلامي | Cihan Bank</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700;800&display=swap" rel="stylesheet">
-
+    <!-- Cairo Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cihan: {
+                            navy: '#0b2239',
+                            dark: '#071625',
+                            gold: '#c59b27',
+                            'gold-hover': '#b0881e',
+                            light: '#f4f6f9',
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Transitions Slider */
+        .carousel-item {
+            transition: opacity 0.8s ease-in-out;
+        }
+    </style>
 </head>
-<body>
-    <div class="modal-overlay" id="errorModal">
-        <div class="modal">
-            <div class="modal-icon error">
-                <i class="fas fa-exclamation-triangle"></i>
-            </div>
-            <h2 class="modal-title" data-i18n="alertTitle">تنبيه</h2>
-            <p class="modal-message" id="errorMessage" data-i18n="errorSelectPackage">يرجى اختيار الباقة أولاً ثم إكمال طلبك</p>
-            <button class="btn btn-primary modal-btn" onclick="closeModal()" data-i18n="okButton">حسناً</button>
-        </div>
-    </div>
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-cihan-gold selection:text-white">
 
-    <!-- Header -->
-    <header class="header">
-        <div class="container header-content">
-            <div class="logo">
-                <img src="/images/logo.png" alt="Fazaa">
+    <!-- HEADER / الهيدر يضم الشعار والمشروع -->
+    <header class="sticky top-0 z-40 bg-cihan-navy text-white shadow-xl border-b border-cihan-gold/30">
+        <!-- Top Bar -->
+        <div class="bg-cihan-dark py-2 px-4 text-xs text-gray-300 border-b border-gray-800">
+            <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    
+                    
+                </div>
+                <div class="flex items-center space-x-3 space-x-reverse">
+                   
+                  
+                </div>
             </div>
-            <nav class="nav">
-                <a href="#" class="lang-toggle" id="langToggle" onclick="toggleLanguage(); return false;">English</a>
-            </nav>
+        </div>
+
+        <!-- Main Nav -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div class="flex items-center justify-between">
+                
+                <!-- شعار المصرف + شعار المشروع (حسابي) -->
+                <div class="flex items-center gap-4 sm:gap-6">
+                    <!-- شعار المصرف -->
+                    <a href="#" class="flex items-center gap-2 group">
+                        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-cihan-gold to-yellow-200 flex items-center justify-center text-cihan-navy font-bold text-2xl shadow-md">
+                            <i class="fa-solid fa-landmark"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-extrabold text-lg sm:text-xl text-white group-hover:text-cihan-gold transition-colors">مصرف جيهان</span>
+                            <span class="text-[10px] text-cihan-gold tracking-widest uppercase font-semibold">للإستثمار والتمويل الإسلامي</span>
+                        </div>
+                    </a>
+
+                    <div class="h-8 w-px bg-gray-700 hidden sm:block"></div>
+
+                    <!-- شعار مشروع التوطين (حسابي) -->
+                    <div class="hidden sm:flex items-center gap-2 bg-cihan-dark/60 border border-cihan-gold/40 px-3 py-1.5 rounded-lg">
+                        <div class="w-7 h-7 rounded-md bg-cihan-gold text-cihan-navy font-bold flex items-center justify-center text-xs">
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-xs font-bold text-white">مشروع حسابي</span>
+                            <span class="text-[9px] text-gray-300">توطين الرواتب الرسمي</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nav Links Desktop -->
+                <nav class="hidden lg:flex items-center space-x-8 space-x-reverse font-semibold text-sm">
+                    <a href="#about" class="text-gray-200 hover:text-cihan-gold transition-colors">عن المصرف</a>
+                    <a href="#services" class="text-gray-200 hover:text-cihan-gold transition-colors">الخدمات والتمويل</a>
+                    <a href="#project" class="text-gray-200 hover:text-cihan-gold transition-colors">مشروع التوطين</a>
+                    <a href="#contact" class="text-gray-200 hover:text-cihan-gold transition-colors">اتصل بنا</a>
+                </nav>
+
+                <!-- Mobile menu btn -->
+                <div class="lg:hidden">
+                    <button id="mobileMenuBtn" class="text-gray-300 hover:text-white p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-cihan-dark border-t border-gray-800 px-4 py-4 space-y-2">
+            <a href="#about" class="block text-gray-300 hover:text-cihan-gold py-1">عن المصرف</a>
+            <a href="#services" class="block text-gray-300 hover:text-cihan-gold py-1">الخدمات والتمويل</a>
+            <a href="#project" class="block text-gray-300 hover:text-cihan-gold py-1">مشروع التوطين (حسابي)</a>
+            <a href="#contact" class="block text-gray-300 hover:text-cihan-gold py-1">اتصل بنا</a>
         </div>
     </header>
 
-    <!-- Hero Slider -->
-    <section class="hero-slider">
-        <div class="slider-container">
-            <div class="slider-wrapper">
-                <div class="slide active">
-                    <img src="/images/slider/slider_Fazaa-du-web-banner-arabic.png" alt="Banner 1">
-                </div>
-                <div class="slide">
-                    <img src="/images/slider/slider_Zero-dirhams-arabic.png" alt="Banner 2">
+    <!-- HERO BANNER SLIDER / بانر صور يمرر ديناميكياً أسفل الهيدر -->
+    <section class="relative bg-cihan-dark overflow-hidden">
+        <div id="heroCarousel" class="relative w-full h-[400px] md:h-[500px]">
+            
+            <!-- Slide 1 -->
+            <div class="carousel-item absolute inset-0 opacity-100 transition-opacity duration-1000 ease-in-out">
+                <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1920&q=80" alt="مصرف جيهان الإسلامي" class="w-full h-full object-cover opacity-30">
+                <div class="absolute inset-0 bg-gradient-to-r from-cihan-dark via-cihan-dark/70 to-transparent flex items-center">
+                    <div class="max-w-7xl mx-auto px-6 sm:px-12 w-full">
+                        <div class="max-w-xl">
+                            <span class="inline-block bg-cihan-gold/20 text-cihan-gold border border-cihan-gold/40 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                                الشريعة والابتكار
+                            </span>
+                            <h1 class="text-2xl md:text-4xl font-extrabold text-white leading-tight mb-3">
+                                مصرف جيهان للإستثمار والتمويل الإسلامي
+                            </h1>
+                            <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                                خدمات مصرفية إسلامية رائدة تلبي احتياجات الأفراد والشركات في كافة محافظات العراق بأمان وثقة.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="slider-nav">
-                <button class="slider-btn prev"><i class="fas fa-chevron-right"></i></button>
-                <button class="slider-btn next"><i class="fas fa-chevron-left"></i></button>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1920&q=80" alt="الساعة الذكية" class="w-full h-full object-cover opacity-30">
+                <div class="absolute inset-0 bg-gradient-to-r from-cihan-dark via-cihan-dark/80 to-transparent flex items-center">
+                    <div class="max-w-7xl mx-auto px-6 sm:px-12 w-full">
+                        <div class="max-w-xl">
+                            <span class="inline-block bg-blue-500/20 text-blue-400 border border-blue-500/40 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                                التقنية المالية الحديثة
+                            </span>
+                            <h1 class="text-2xl md:text-4xl font-extrabold text-white leading-tight mb-3">
+                                الدفع الذكي عبر الساعة الذكية (Cihan SmartWatch)
+                            </h1>
+                            <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                                نفذ مدفوعاتك السريعة واللاتلامسية مباشرة من معصم يدك وبكل سهولة.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="slider-dots">
-                <span class="dot active" data-index="0"></span>
-                <span class="dot" data-index="1"></span>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1920&q=80" alt="التمويل والسلف" class="w-full h-full object-cover opacity-30">
+                <div class="absolute inset-0 bg-gradient-to-r from-cihan-dark via-cihan-dark/80 to-transparent flex items-center">
+                    <div class="max-w-7xl mx-auto px-6 sm:px-12 w-full">
+                        <div class="max-w-xl">
+                            <span class="inline-block bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                                حلول التمويل الإسلامي
+                            </span>
+                            <h1 class="text-2xl md:text-4xl font-extrabold text-white leading-tight mb-3">
+                                سلف وتمويلات إسلامية بشروط ميسرة
+                            </h1>
+                            <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                                مرابحة وتسهيلات تمويلية شخصية وعقارية متوافقة بالكامل مع الشريعة الإسلامية.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- أزرار التمرير للسلايدر -->
+            <button id="prevSlide" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-cihan-gold hover:text-cihan-dark text-white w-10 h-10 rounded-full flex items-center justify-center transition-all z-20">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <button id="nextSlide" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-cihan-gold hover:text-cihan-dark text-white w-10 h-10 rounded-full flex items-center justify-center transition-all z-20">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <!-- مؤشرات السلايدر -->
+            <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex space-x-2 space-x-reverse z-20" id="carouselIndicators">
+                <button class="w-7 h-2 rounded-full bg-cihan-gold transition-all" data-slide="0"></button>
+                <button class="w-2 h-2 rounded-full bg-white/50 transition-all" data-slide="1"></button>
+                <button class="w-2 h-2 rounded-full bg-white/50 transition-all" data-slide="2"></button>
             </div>
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="benefits-section">
-        <div class="container">
-        <div> 
-    <h2 class="section-title section-title-custom" data-i18n="membershipBenefits">مزايا العضوية</h2>
-</div>
-            <div class="cards-grid">
-                <!-- Platinum Card -->
-                <div class="card platinum" data-tier="platinum">
-                    <div class="card-badge" data-i18n="mostPopular">الأكثر طلباً</div>
-                    <div class="card-image">
-                        <img src="/images/products/Platinum.png" alt="Platinum">
-                    </div>
-                    <h3 class="card-title" data-i18n="platinum">البلاتينية</h3>
-                    <p class="card-desc" data-i18n="platinumDesc">أوسع مزايا وعروض حصرية</p>
-                    <button class="btn btn-primary btn-order" onclick="startOrder('platinum')" data-i18n="orderNow">أطلب الآن</button>
-                    <details class="card-details">
-                        <summary data-i18n="showMore">عرض المزيد</summary>
-                        <ul class="features-list">
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat1">عروض البلاتينية الحصرية</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat2">العروض والخصومات</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat3">فنادق وباقات للسفر</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat4">متاجر فزعة</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat5">فزعة أماكن</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat6">خدمة إيجار السيارات</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat7">فزعة هيلث</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat8">إيجار السيارات طويل الأمد</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat9">فزعة للسيارات المستعملة</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat10">التعويض عن الحوادث الشخصية</span></li>
-                        </ul>
-                    </details>
-                </div>
-
-                <!-- Gold Card -->
-                <div class="card gold" data-tier="gold">
-                    <div class="card-image">
-                        <img src="/images/products/Gold.png" alt="Gold">
-                    </div>
-                    <h3 class="card-title" data-i18n="gold">الذهبية</h3>
-                    <p class="card-desc" data-i18n="goldDesc">عروض وخصومات مميزة</p>
-                    <button class="btn btn-primary btn-order" onclick="startOrder('gold')" data-i18n="orderNow">أطلب الآن</button>
-                    <details class="card-details">
-                        <summary data-i18n="showMore">عرض المزيد</summary>
-                        <ul class="features-list">
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat2">العروض والخصومات</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat4">متاجر فزعة</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat5">فزعة أماكن</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat3">فنادق وباقات للسفر</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat6">خدمة إيجار السيارات</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat7">فزعة هيلث</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat8">إيجار السيارات طويل الأمد</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat10">التعويض عن الحوادث الشخصية</span></li>
-                        </ul>
-                    </details>
-                </div>
-
-                <!-- Silver Card -->
-                <div class="card silver" data-tier="silver">
-                    <div class="card-image">
-                        <img src="/images/products/Silver.png" alt="Silver">
-                    </div>
-                    <h3 class="card-title" data-i18n="silver">الفضية</h3>
-                    <p class="card-desc" data-i18n="silverDesc">خصومات وخدمات أساسية</p>
-                    <button class="btn btn-primary btn-order" onclick="startOrder('silver')" data-i18n="orderNow">أطلب الآن</button>
-                    <details class="card-details">
-                        <summary data-i18n="showMore">عرض المزيد</summary>
-                        <ul class="features-list">
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat5">فزعة أماكن</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat4">متاجر فزعة</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat3">فنادق وباقات للسفر</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat6">خدمة إيجار السيارات</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat7">فزعة هيلث</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat8">إيجار السيارات طويل الأمد</span></li>
-                        </ul>
-                    </details>
-                </div>
-
-                <!-- Fazaa Discounts Card -->
-                <div class="card fazaa-discount" data-tier="fazaa">
-                    <div class="card-image">
-                        <img src="/images/products/Discount.png" alt="Fazaa Discounts">
-                    </div>
-                    <h3 class="card-title" data-i18n="fazaaDiscount">خصومات فزعة</h3>
-                    <p class="card-desc" data-i18n="fazaaDiscountDesc">خصومات مختارة يومياً</p>
-                    <button class="btn btn-primary btn-order" onclick="startOrder('fazaa')" data-i18n="orderNow">أطلب الآن</button>
-                    <details class="card-details">
-                        <summary data-i18n="showMore">عرض المزيد</summary>
-                        <ul class="features-list">
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat7">فزعة هيلث</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat4">متاجر فزعة</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat5">فزعة أماكن</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat3">فنادق وباقات للسفر</span></li>
-                            <li><i class="fas fa-check"></i> <span data-i18n="feat6">خدمة إيجار السيارات</span></li>
-                        </ul>
-                    </details>
-                </div>
+    <!-- ACTION BUTTONS SECTION / قسم الأزرار الرئيسية أسفل البانر مباشرة -->
+    <section class="relative z-30 -mt-8 max-w-5xl mx-auto px-4">
+        <div class="bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
+            <div class="text-center mb-6">
+                <h2 class="text-xl font-bold text-cihan-navy">الخدمات الرئيسية السريعة</h2>
+                <p class="text-gray-500 text-xs mt-1">اختر الخدمة المطلوبة اضغط على الزر أدناه</p>
             </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- 1. زر طلب الساعة الذكية -->
+                <div class="bg-gradient-to-br from-gray-900 to-cihan-navy rounded-xl p-6 text-white shadow-md flex flex-col justify-between border-t-4 border-cihan-gold">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-cihan-gold/20 rounded-xl flex items-center justify-center text-cihan-gold text-2xl border border-cihan-gold/30">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">الساعة الذكية</h3>
+                            <p class="text-xs text-gray-300">Cihan SmartWatch Payment</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-xs mb-6 leading-relaxed">
+                        بطاقة دفع على شكل ساعة ذكية تمكّنك من الدفع السريع والآمن ومتابعة حسابك مباشرة.
+                    </p>
+                    <!-- الزر المطلوب -->
+                    <button id="btnSmartWatch" onclick="handleAction('تم اختيار طلب الساعة الذكية. شكراً لاهتمامكم بخدمات مصرف جيهان!')" class="w-full bg-cihan-gold hover:bg-cihan-gold-hover text-cihan-dark font-extrabold py-3 px-4 rounded-lg shadow-md hover:shadow-lg transition-all transform active:scale-95 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-microchip"></i>
+                        <span> طلب الساعة الذكية</span>
+                    </button>
+                </div>
+
+                <!-- 2. زر طلب سلفة -->
+                <div class="bg-gradient-to-br from-cihan-navy to-slate-800 rounded-xl p-6 text-white shadow-md flex flex-col justify-between border-t-4 border-emerald-500">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center text-emerald-400 text-2xl border border-emerald-500/30">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">التمويل السريع</h3>
+                            <p class="text-xs text-gray-300">Islamic Financing & Advances</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-xs mb-6 leading-relaxed">
+                        احصل على تمويل وسلفة شخصية متوافقة مع ضوابط الشريعة الإسلامية بشروط وسداد ميسر.
+                    </p>
+                    <!-- الزر المطلوب -->
+                    <button id="btnLoan" onclick="handleAction('تم اختيار طلب السلفة. شكراً لاهتمامكم بخدمات مصرف جيهان!')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3 px-4 rounded-lg shadow-md hover:shadow-lg transition-all transform active:scale-95 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-calculator"></i>
+                        <span> طلب سلفة</span>
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- رسالة تنبيه تفاعلية عند الضغط على الأزرار -->
+            <div id="actionFeedback" class="hidden mt-4 p-3 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs md:text-sm font-bold rounded-lg text-center transition-all"></div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <span class="brand-name">فزعة</span>
+    <!-- BANK DETAILS & ABOUT SECTION / تفاصيل المصرف والمشروع -->
+    <section id="about" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="text-cihan-gold font-bold text-xs tracking-wider uppercase">نبذة عن المصرف</span>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-cihan-navy mt-1">تفاصيل مصرف جيهان للاستثمار والتمويل الإسلامي</h2>
+            <div class="w-16 h-1 bg-cihan-gold mx-auto my-3 rounded-full"></div>
+            <p class="text-gray-600 text-sm leading-relaxed">
+                تأسس مصرف جيهان عام 2008 ومقره الرئيسي في أربيل - العراق. يُعد من المصارف الرائدة التي تجمع بين الالتزام الكامل بأحكام الشريعة الإسلامية واستخدام أحدث التقنيات المصرفية الرقمية.
+            </p>
+        </div>
+
+        <!-- المميزات الرئيسية -->
+        <div id="services" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            
+            <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all text-center">
+                <div class="w-14 h-14 bg-cihan-gold/10 text-cihan-gold rounded-full flex items-center justify-center text-xl mx-auto mb-3">
+                    <i class="fa-solid fa-kaaba"></i>
+                </div>
+                <h3 class="text-base font-bold text-cihan-navy mb-2">تمويل إسلامي شرعي</h3>
+                <p class="text-gray-500 text-xs leading-relaxed">تقديم صيغ تمويلية إسلامية معتمدة كـ المرابحة، المشاركة، والإجارة المنتهية بالتمليك تحت إشراف هيئة شرعية.</p>
             </div>
-            <div class="footer-links">
-                <a href="#" data-i18n="privacy">سياسة الخصوصية</a>
-                <a href="#" data-i18n="terms">شروط الخدمة</a>
-                <a href="#" data-i18n="support">الدعم</a>
-                <a href="#" data-i18n="faq">الأسئلة الشائعة</a>
+
+            <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all text-center">
+                <div class="w-14 h-14 bg-cihan-navy/10 text-cihan-navy rounded-full flex items-center justify-center text-xl mx-auto mb-3">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                </div>
+                <h3 class="text-base font-bold text-cihan-navy mb-2">الخدمات الرقمية</h3>
+                <p class="text-gray-500 text-xs leading-relaxed">تطبيق المصرف الذكي للأجهزة الذكية، بطاقات ماستركارد، والساعة الذكية لتوفير مدفوعات إلكترونية مرنة.</p>
             </div>
-            <div class="footer-copyright">
-                <p>© 2026 <span data-i18n="brandName">فزعة</span>. <span data-i18n="rights">جميع الحقوق محفوظة.</span></p>
+
+            <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all text-center">
+                <div class="w-14 h-14 bg-emerald-500/10 text-emerald-600 rounded-full flex items-center justify-center text-xl mx-auto mb-3">
+                    <i class="fa-solid fa-network-wired"></i>
+                </div>
+                <h3 class="text-base font-bold text-cihan-navy mb-2">شبكة الفروع والتوطين</h3>
+                <p class="text-gray-500 text-xs leading-relaxed">فروع متوزعة في أربيل، بغداد، السليمانية، دهوك، وكركوك، مع التشارك الفعال في مشروع (حسابي) لتوطين الرواتب.</p>
+            </div>
+
+        </div>
+
+        <!-- تفاصيل مشروع حسابي والتوطين -->
+        <div id="project" class="bg-cihan-navy text-white rounded-2xl p-8 shadow-xl relative overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                    <span class="bg-cihan-gold text-cihan-dark text-[10px] font-extrabold px-3 py-1 rounded-md mb-2 inline-block">مشروع توطين الرواتب</span>
+                    <h3 class="text-xl md:text-2xl font-bold mb-3">مشروع (حسابي) للموظفين والمتقاعدين</h3>
+                    <p class="text-gray-300 text-xs md:text-sm leading-relaxed mb-4">
+                        يتيح المصرف للموظفين في القطاعين العام والخاص توطين رواتبهم والحصول على بطاقات مصرفية ذات مزايا متعددة، بالإضافة إلى إمكانية الاستفادة الفورية من سلف التوطين والخدمات الإلكترونية.
+                    </p>
+                    <div class="space-y-2 text-xs text-gray-200">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-cihan-gold"></i>
+                            <span>سحب نقدي مجاني عبر شبكة الصرافات الآلية.</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-cihan-gold"></i>
+                            <span>عروض خاصة وتخفيضات شركاء المصرف.</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- تصميم بطاقة تمثيلية للمشروع -->
+                <div class="flex justify-center">
+                    <div class="w-full max-w-xs h-44 bg-gradient-to-tr from-yellow-700 via-cihan-gold to-yellow-300 rounded-xl shadow-lg p-5 text-cihan-dark flex flex-col justify-between">
+                        <div class="flex justify-between items-center">
+                            <span class="font-extrabold text-sm tracking-wider">CIHAN BANK</span>
+                            <span class="text-xs font-bold bg-cihan-dark text-white px-2 py-0.5 rounded">حسابي</span>
+                        </div>
+                        <div>
+                            <div class="w-10 h-7 bg-yellow-200/60 rounded border border-yellow-800/20 mb-2"></div>
+                            <span class="font-mono text-sm font-bold tracking-widest text-cihan-dark">**** **** **** 9012</span>
+                        </div>
+                        <div class="flex justify-between items-end">
+                            <span class="font-bold text-xs">بطاقة توطين الرواتب</span>
+                            <i class="fa-brands fa-cc-mastercard text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- FOOTER / التذييل يحمل الشعار والمشروع والمعلومات -->
+    <footer id="contact" class="bg-cihan-dark text-white border-t border-gray-800 pt-12 pb-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-gray-800">
+                
+                <!-- 1. الشعار والمشروع في الفوتر -->
+                <div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-9 h-9 rounded-lg bg-cihan-gold flex items-center justify-center text-cihan-navy font-bold text-lg">
+                            <i class="fa-solid fa-landmark"></i>
+                        </div>
+                        <span class="font-bold text-lg text-white">مصرف جيهان</span>
+                    </div>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                        مصرف جيهان للاستثمار والتمويل الإسلامي - مؤسسة مالية عراقية مرخصة خاضعة لرقابة البنك المركزي العراقي.
+                    </p>
+                    <div class="inline-flex items-center gap-2 bg-gray-800/80 px-3 py-1.5 rounded-lg border border-gray-700">
+                        <i class="fa-solid fa-wallet text-cihan-gold text-xs"></i>
+                        <span class="text-xs text-gray-300">شريك معتمد في <strong>مشروع حسابي</strong></span>
+                    </div>
+                </div>
+
+                <!-- 2. معلومات التواصل -->
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3 border-r-2 border-cihan-gold pr-2">معلومات الاتصال</h4>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li><i class="fa-solid fa-phone text-cihan-gold ml-2"></i> الرقم المختصر: <strong>6618</strong></li>
+                        <li><i class="fa-solid fa-envelope text-cihan-gold ml-2"></i> info@cihanbank.com.iq</li>
+                        <li><i class="fa-solid fa-location-dot text-cihan-gold ml-2"></i> أربيل - شارع 60 متري (الإدارة العامة)</li>
+                        <li><i class="fa-solid fa-building text-cihan-gold ml-2"></i> بغداد - الكرادة / شارع العرصات</li>
+                    </ul>
+                </div>
+
+                <!-- 3. بيانات المصرف الرسمية -->
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3 border-r-2 border-cihan-gold pr-2">البيانات الرسمية</h4>
+                    <div class="text-xs text-gray-400 space-y-2 font-mono">
+                        <p>ISX: <span class="text-white">BCIH</span></p>
+                        <p>SWIFT: <span class="text-white">CIHBIQBAXXX</span></p>
+                        <p>Capital: <span class="text-white">255,000,000,000 IQD</span></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- حقوق النشر -->
+            <div class="pt-6 text-center text-xs text-gray-500">
+                <p>© 2026 جميع الحقوق محفوظة - مصرف جيهان للاستثمار والتمويل الإسلامي.</p>
             </div>
         </div>
     </footer>
 
-    <script src="/js/main.js"></script>
-    <script src="/js/i18n.js"></script>
+    <!-- JAVASCRIPT LOGIC / كود البرمجة للتفاعل والسلايدر -->
+    <script>
+        // Toggle Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Carousel Dynamic Logic
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('#heroCarousel .carousel-item');
+        const indicators = document.querySelectorAll('#carouselIndicators button');
+        const totalSlides = slides.length;
+        let slideInterval;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.remove('opacity-0');
+                    slide.classList.add('opacity-100');
+                } else {
+                    slide.classList.remove('opacity-100');
+                    slide.classList.add('opacity-0');
+                }
+            });
+
+            indicators.forEach((ind, i) => {
+                if (i === index) {
+                    ind.className = 'w-7 h-2 rounded-full bg-cihan-gold transition-all';
+                } else {
+                    ind.className = 'w-2 h-2 rounded-full bg-white/50 transition-all';
+                }
+            });
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            let next = (currentSlide + 1) % totalSlides;
+            showSlide(next);
+        }
+
+        function prevSlide() {
+            let prev = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(prev);
+        }
+
+        document.getElementById('nextSlide').addEventListener('click', () => {
+            nextSlide();
+            resetTimer();
+        });
+
+        document.getElementById('prevSlide').addEventListener('click', () => {
+            prevSlide();
+            resetTimer();
+        });
+
+        indicators.forEach((ind, i) => {
+            ind.addEventListener('click', () => {
+                showSlide(i);
+                resetTimer();
+            });
+        });
+
+        function startTimer() {
+            slideInterval = setInterval(nextSlide, 4000);
+        }
+
+        function resetTimer() {
+            clearInterval(slideInterval);
+            startTimer();
+        }
+
+        startTimer();
+
+        // Action Feedback Handler (عند الضغط على أزرار طلب الساعة أو طلب السلفة)
+        function handleAction(message) {
+            const feedback = document.getElementById('actionFeedback');
+            feedback.innerText = message;
+            feedback.classList.remove('hidden');
+            
+            // إخفاء الرسالة تلقائياً بعد 4 ثوانٍ
+            setTimeout(() => {
+                feedback.classList.add('hidden');
+            }, 4000);
+        }
+    </script>
 </body>
 </html>
