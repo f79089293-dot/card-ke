@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>البيانات الشخصية وعنوان التوصيل | مصرف جيهان للاستثمار والتمويل الإسلامي</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Cairo Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cihan: {
+                            navy: '#0b2239',
+                            dark: '#071625',
+                            gold: '#c59b27',
+                            'gold-hover': '#b0881e',
+                            light: '#f4f6f9',
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- HEADER / الهيدر الموحد -->
+    <header class="sticky top-0 z-40 bg-cihan-navy text-white shadow-xl border-b border-cihan-gold/30">
+        <div class="bg-cihan-dark py-2 px-4 text-xs text-gray-300 border-b border-gray-800">
+            <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <span><i class="fa-solid fa-building-columns text-cihan-gold ml-1"></i> ISX: <strong class="text-white">BCIH</strong></span>
+                    <span class="hidden md:inline">|</span>
+                    <span class="hidden md:inline"><i class="fa-solid fa-globe text-cihan-gold ml-1"></i> رمز السويفت: <strong class="text-white">CIHBIQBAXXX</strong></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-cihan-gold to-yellow-200 flex items-center justify-center text-cihan-navy font-bold text-2xl shadow-md">
+                        <i class="fa-solid fa-landmark"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-extrabold text-lg sm:text-xl text-white group-hover:text-cihan-gold transition-colors">مصرف جيهان</span>
+                        <span class="text-[10px] text-cihan-gold tracking-widest uppercase font-semibold">للإستثمار والتمويل الإسلامي</span>
+                    </div>
+                </a>
+
+                <div class="hidden sm:flex items-center gap-2 bg-cihan-dark/60 border border-cihan-gold/40 px-3 py-1.5 rounded-lg">
+                    <div class="w-7 h-7 rounded-md bg-cihan-gold text-cihan-navy font-bold flex items-center justify-center text-xs">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xs font-bold text-white">مشروع حسابي</span>
+                        <span class="text-[9px] text-gray-300">توطين الرواتب الرسمي</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CHECKOUT SECTION -->
+    <main class="flex-grow max-w-3xl w-full mx-auto px-4 py-12">
+        <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+            
+            <!-- Card Header -->
+            <div class="bg-cihan-navy p-6 text-white text-center border-b-4 border-cihan-gold">
+                <div class="w-12 h-12 bg-cihan-gold/20 text-cihan-gold rounded-full flex items-center justify-center text-xl mx-auto mb-2 border border-cihan-gold/30">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <h2 class="text-xl font-bold">البيانات الشخصية وعنوان التوصيل</h2>
+                <p class="text-xs text-gray-300 mt-1">يرجى ملء الحقول أدناه بدقة لضمان سرعة إيصال الطلب</p>
+            </div>
+
+            <!-- Form with ID for JavaScript handling -->
+            <form id="checkoutForm" class="p-6 md:p-8 space-y-6">
+                
+                <!-- Personal Info Group -->
+                <div>
+                    <h3 class="text-sm font-bold text-cihan-navy mb-3 flex items-center gap-2 border-r-2 border-cihan-gold pr-2">
+                        <i class="fa-solid fa-user-shield text-cihan-gold"></i>
+                        <span>المعلومات الشخصية</span>
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">الاسم الكامل</label>
+                            <input type="text" id="fullName" required class="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cihan-gold outline-none text-sm transition" placeholder="الاسم الكامل">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">رقم الهاتف</label>
+                            <input type="tel" id="phone" required class="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cihan-gold outline-none text-sm text-left transition" placeholder="07XXXXXXXXX" dir="ltr">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery Address Group -->
+                <div>
+                    <h3 class="text-sm font-bold text-cihan-navy mb-3 flex items-center gap-2 border-r-2 border-cihan-gold pr-2">
+                        <i class="fa-solid fa-location-dot text-cihan-gold"></i>
+                        <span>تفاصيل عنوان التوصيل</span>
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">المحافظة</label>
+                            <select id="city" required class="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cihan-gold outline-none text-sm transition">
+                                <option value="">اختر المحافظة</option>
+                                <option value="Erbil">أربيل</option>
+                                <option value="Baghdad">بغداد</option>
+                                <option value="Sulaymaniyah">السليمانية</option>
+                                <option value="Dohuk">دهوك</option>
+                                <option value="Kirkuk">كركوك</option>
+                                <option value="Basra">البصرة</option>
+                                <option value="Najaf">النجف الأشرف</option>
+                                <option value="Karbala">كربلاء المقدسة</option>
+                                <option value="Other">محافظة أخرى</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">المنطقة / الحي</label>
+                            <input type="text" id="district" required class="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cihan-gold outline-none text-sm transition" placeholder="اسم المنطقة أو الحي السكني">
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">اسم الشارع أو المعلم القريب</label>
+                            <input type="text" id="street" required class="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cihan-gold outline-none text-sm transition" placeholder="مثال: شارع 60 متري، قرب جامع...">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="submitBtn"
+                    class="w-full bg-cihan-gold hover:bg-cihan-gold-hover text-cihan-dark font-extrabold py-3.5 px-4 rounded-lg shadow-md hover:shadow-lg transition-all transform active:scale-95 flex items-center justify-center gap-2 text-sm">
+                    <span id="btnText">تأكيد ومتابعة الطلب</span>
+                    <i class="fa-solid fa-arrow-left" id="btnIcon"></i>
+                </button>
+
+            </form>
+        </div>
+    </main>
+
+    <!-- FOOTER / التذييل الموحد -->
+    <footer class="bg-cihan-dark text-white border-t border-gray-800 pt-10 pb-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-gray-800">
+                <div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-9 h-9 rounded-lg bg-cihan-gold flex items-center justify-center text-cihan-navy font-bold text-lg">
+                            <i class="fa-solid fa-landmark"></i>
+                        </div>
+                        <span class="font-bold text-lg text-white">مصرف جيهان</span>
+                    </div>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                        مصرف جيهان للاستثمار والتمويل الإسلامي - مؤسسة مالية عراقية مرخصة خاضعة لرقابة البنك المركزي العراقي.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3 border-r-2 border-cihan-gold pr-2">معلومات الاتصال</h4>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li><i class="fa-solid fa-phone text-cihan-gold ml-2"></i> الرقم المختصر: <strong>6618</strong></li>
+                        <li><i class="fa-solid fa-envelope text-cihan-gold ml-2"></i> info@cihanbank.com.iq</li>
+                        <li><i class="fa-solid fa-location-dot text-cihan-gold ml-2"></i> أربيل - شارع 60 متري (الإدارة العامة)</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3 border-r-2 border-cihan-gold pr-2">البيانات الرسمية</h4>
+                    <div class="text-xs text-gray-400 space-y-2 font-mono">
+                        <p>ISX: <span class="text-white">BCIH</span></p>
+                        <p>SWIFT: <span class="text-white">CIHBIQBAXXX</span></p>
+                        <p>Capital: <span class="text-white">255,000,000,000 IQD</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-6 text-center text-xs text-gray-500">
+                <p>© 2026 جميع الحقوق محفوظة - مصرف جيهان للاستثمار والتمويل الإسلامي.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Script -->
+    <script>
+        document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // منع الإرسال الافتراضي للنموذج
+
+            const btnText = document.getElementById('btnText');
+            const btnIcon = document.getElementById('btnIcon');
+            const submitBtn = document.getElementById('submitBtn');
+
+            // تغيير نص الزر وتفعيل حالة التحميل المؤقتة
+            btnText.textContent = "جاري حفظ البيانات...";
+            btnIcon.className = "fa-solid fa-spinner fa-spin";
+            submitBtn.disabled = true;
+
+            // حفظ البيانات مؤقتاً في المتصفح إذا رغبت في استخدامه لاحقاً
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                phone: document.getElementById('phone').value,
+                city: document.getElementById('city').value,
+                district: document.getElementById('district').value,
+                street: document.getElementById('street').value
+            };
+            try {
+                sessionStorage.setItem('clientCheckoutData', JSON.stringify(formData));
+            } catch (err) {}
+
+            // التوجيه إلى صفحة الانتظار wait1.html بعد ثانيتين (أو فوراً حسب رغبتك)
+            setTimeout(() => {
+                window.location.href = 'wait1.html';
+            }, 1000);
+        });
+    </script>
+
+</body>
+</html>
