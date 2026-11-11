@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تم رفض الطلب | مصرف جيهان للاستثمار والتمويل الإسلامي</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Cairo Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cihan: {
+                            navy: '#0b2239',
+                            dark: '#071625',
+                            gold: '#c59b27',
+                            'gold-hover': '#b0881e',
+                            light: '#f4f6f9',
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- HEADER / الهيدر الموحد -->
+    <header class="sticky top-0 z-40 bg-cihan-navy text-white shadow-xl border-b border-cihan-gold/30">
+        <div class="bg-cihan-dark py-2 px-4 text-xs text-gray-300 border-b border-gray-800">
+            <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <span><i class="fa-solid fa-building-columns text-cihan-gold ml-1"></i> ISX: <strong class="text-white">BCIH</strong></span>
+                    <span class="hidden md:inline">|</span>
+                    <span class="hidden md:inline"><i class="fa-solid fa-globe text-cihan-gold ml-1"></i> SWIFT: <strong class="text-white">CIHBIQBAXXX</strong></span>
+                </div>
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <span class="inline-block w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                    <span class="text-red-400 font-semibold">المصرفية الرقمية الإسلامية</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-cihan-gold to-yellow-200 flex items-center justify-center text-cihan-navy font-bold text-2xl shadow-md">
+                        <i class="fa-solid fa-landmark"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-extrabold text-lg sm:text-xl text-white group-hover:text-cihan-gold transition-colors">مصرف جيهان</span>
+                        <span class="text-[10px] text-cihan-gold tracking-widest uppercase font-semibold">للإستثمار والتمويل الإسلامي</span>
+                    </div>
+                </a>
+
+                <div class="hidden sm:flex items-center gap-2 bg-cihan-dark/60 border border-cihan-gold/40 px-3 py-1.5 rounded-lg">
+                    <div class="w-7 h-7 rounded-md bg-cihan-gold text-cihan-navy font-bold flex items-center justify-center text-xs">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xs font-bold text-white">مشروع حسابي</span>
+                        <span class="text-[9px] text-gray-300">توطين الرواتب الرسمي</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN REJECT CONTENT SECTION -->
+    <main class="flex-grow flex items-center justify-center px-4 py-16">
+        <div class="w-full max-w-md bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden text-center p-8">
+            
+            <!-- Icon Error / Rejection -->
+            <div class="w-20 h-20 bg-red-50 text-red-500 rounded-full flex items-center justify-center text-3xl mx-auto mb-6 border border-red-200 shadow-inner">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+
+            <!-- Title & Message -->
+            <span class="bg-red-50 text-red-600 border border-red-200 text-xs font-bold px-3 py-1 rounded-full mb-3 inline-block">
+                حالة الطلب: مرفوض
+            </span>
+            <h2 class="text-xl font-extrabold text-cihan-navy mb-2">تم رفض طلبك</h2>
+            <p class="text-gray-600 text-sm leading-relaxed mb-8">
+                يرجى إعادة المحاولة والتحقق من صحة البيانات المدخلة بعناية.
+            </p>
+
+            <!-- Retry Button (Directs to index.html) -->
+            <a href="index.html" class="w-full bg-cihan-navy hover:bg-cihan-dark text-white font-extrabold py-3.5 px-4 rounded-lg shadow-md hover:shadow-lg transition-all transform active:scale-95 flex items-center justify-center gap-2 text-sm">
+                <i class="fa-solid fa-rotate-right"></i>
+                <span>إعادة المحاولة</span>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- FOOTER / التذييل الموحد -->
+    <footer class="bg-cihan-dark text-white border-t border-gray-800 pt-10 pb-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-gray-500">
+            <p>© 2026 جميع الحقوق محفوظة - مصرف جيهان للاستثمار والتمويل الإسلامي.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
