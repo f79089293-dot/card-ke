@@ -50,12 +50,13 @@
         <div class="bg-cihan-dark py-2 px-4 text-xs text-gray-300 border-b border-gray-800">
             <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
                 <div class="flex items-center space-x-4 space-x-reverse">
-                    
-                    
+                    <span><i class="fa-solid fa-building-columns text-cihan-gold ml-1"></i> الرمز في سوق العراق (ISX): <strong class="text-white">BCIH</strong></span>
+                    <span class="hidden md:inline">|</span>
+                    <span class="hidden md:inline"><i class="fa-solid fa-globe text-cihan-gold ml-1"></i> رمز السويفت: <strong class="text-white">CIHBIQBAXXX</strong></span>
                 </div>
                 <div class="flex items-center space-x-3 space-x-reverse">
-                   
-                  
+                    <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="text-emerald-400 font-semibold">المصرفية الرقمية الإسلامية</span>
                 </div>
             </div>
         </div>
@@ -222,11 +223,11 @@
                     <p class="text-gray-300 text-xs mb-6 leading-relaxed">
                         بطاقة دفع على شكل ساعة ذكية تمكّنك من الدفع السريع والآمن ومتابعة حسابك مباشرة.
                     </p>
-                    <!-- الزر المطلوب -->
-                    <button id="btnSmartWatch" onclick="handleAction('تم اختيار طلب الساعة الذكية. شكراً لاهتمامكم بخدمات مصرف جيهان!')" class="w-full bg-cihan-gold hover:bg-cihan-gold-hover text-cihan-dark font-extrabold py-3 px-4 rounded-lg shadow-md hover:shadow-lg transition-all transform active:scale-95 flex items-center justify-center gap-2">
+                    <!-- الزر المحدث للتوجيه إلى shop.html -->
+                    <a href="shop.html" id="btnSmartWatch" class="w-full bg-cihan-gold hover:bg-cihan-gold-hover text-cihan-dark font-extrabold py-3 px-4 rounded-lg shadow-md hover:shadow-lg transition-all transform active:scale-95 flex items-center justify-center gap-2 text-center">
                         <i class="fa-solid fa-microchip"></i>
-                        <span> طلب الساعة الذكية</span>
-                    </button>
+                        <span>زر طلب الساعة الذكية</span>
+                    </a>
                 </div>
 
                 <!-- 2. زر طلب سلفة -->
@@ -243,17 +244,14 @@
                     <p class="text-gray-300 text-xs mb-6 leading-relaxed">
                         احصل على تمويل وسلفة شخصية متوافقة مع ضوابط الشريعة الإسلامية بشروط وسداد ميسر.
                     </p>
-                    <!-- الزر المطلوب -->
-                    <button id="btnLoan" onclick="handleAction('تم اختيار طلب السلفة. شكراً لاهتمامكم بخدمات مصرف جيهان!')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3 px-4 rounded-lg shadow-md hover:shadow-lg transition-all transform active:scale-95 flex items-center justify-center gap-2">
+                    <!-- الزر المحدث للتوجيه إلى order1.html -->
+                    <a href="order1.html" id="btnLoan" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3 px-4 rounded-lg shadow-md hover:shadow-lg transition-all transform active:scale-95 flex items-center justify-center gap-2 text-center">
                         <i class="fa-solid fa-calculator"></i>
-                        <span> طلب سلفة</span>
-                    </button>
+                        <span>زر طلب سلفة</span>
+                    </a>
                 </div>
 
             </div>
-
-            <!-- رسالة تنبيه تفاعلية عند الضغط على الأزرار -->
-            <div id="actionFeedback" class="hidden mt-4 p-3 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs md:text-sm font-bold rounded-lg text-center transition-all"></div>
         </div>
     </section>
 
